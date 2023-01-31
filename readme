@@ -9,11 +9,13 @@ Bom pra iniciar criei uma api simples e objetiva utilizando o Graphql e vou dest
 - Foi utilizado a biblioteca Apollo Server com Express.js para criar um servidor GraphQL.
 - Obs tive que utilizar a porta 3000 devido a outras aplicações que no momento preciso manter ativas na máquina, desculpe pela mudança no escopo :)
 
-- No início do código, são definidas as regras de verificação de senha (tamanho mínimo, número mínimo de letras maiúsculas e minúsculas, dígitos e caracteres especiais) e é definido
- o schema do GraphQL com uma única query "verifyPassword" que recebe a senha e as regras de verificação como argumentos e retorna um objeto "verify" contendo um campo booleano "success" 
+- No início do código, são definidas as regras de verificação de senha (tamanho mínimo, número mínimo de letras maiúsculas e minúsculas, 
+dígitos e caracteres especiais) e é definido o schema do GraphQL com uma única query "verifyPassword" que recebe a senha e as
+regras de verificação como argumentos e retorna um objeto "verify" contendo um campo booleano "success" 
  e um array de strings "noMatch" que contém as regras que não foram cumpridas.
 
-- Em seguida, os resolvers para a query são definidos, onde a função "verifyPassword" é responsável por iterar sobre a senha e verificar se cada regra é atendida. Se uma regra não é atendida, 
+- Em seguida, os resolvers para a query são definidos, onde a função "verifyPassword" é responsável por iterar sobre a senha
+e verificar se cada regra é atendida. Se uma regra não é atendida, 
 o nome da regra é adicionado ao array "noMatch" e o campo "verify" é definido como false.
 
 - Por fim, o código cria o servidor Apollo e o aplicativo Express, aplica o servidor Apollo ao aplicativo Express e inicia o servidor.
